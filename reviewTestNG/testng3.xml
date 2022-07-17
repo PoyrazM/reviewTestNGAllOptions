@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="Regression">
+        <groups>
+            <run>
+                <exclude name="Smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="tests.Test1"/>
+            <class name="tests.Test2"/>
+            <class name="tests.Test3"/>
+            <class name="tests.Test4"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests" thread-count="2">
+
+    <listeners>
+        <listener class-name="tests.Listeners"/>
+    </listeners>
+
+    <test verbose="2" preserve-order="true" name="reviewTestNG">
+        <parameter name="URL" value="https://www.enuygun.com/"/>
+        <parameter name="APIKey/username" value="test123"/>
+        <classes>
+            <class name="tests.Test1">
+                <methods>
+                    <exclude name="demo"/>
+                </methods>
+            </class>
+            <class name="tests.Test4"/>
+        </classes>
+    </test>
+    <test name="Priority Test Cases">
+        <parameter name="URL" value="https://www.enuygun.com/bookingflights"/>
+        <parameter name="APIKey/location" value="Izmir - Ankara"/>
+        <classes>
+            <class name="tests.Test2"/>
+            <class name="tests.Test3">
+                <methods>
+                    <include name="firstStep"/>
+                    <exclude name="secondStep"/>
+                    <include name="thirdStep"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Exclude Trial">
+        <classes>
+            <class name="tests.Test4">
+                <methods>
+                    <exclude name="web.*"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
